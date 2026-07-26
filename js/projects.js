@@ -26,7 +26,7 @@ const PORTFOLIO = {
       images: [
         "assets/images/rev11.jpg",
         "assets/images/rev11_testing.jpg",
-        "assets/images/on-track.jpg",
+        "assets/images/on-track.JPG",
         "assets/images/tilt-pic.jpg",
         "assets/images/substack.jpeg",
         "assets/images/drivetrain.jpeg",
@@ -43,6 +43,7 @@ const PORTFOLIO = {
     {
       images: [
         "assets/images/REVX_driversystems.png",
+        "assets/images/rev11-design.JPG",
         "assets/images/pedal_box.jpg",
         "assets/images/REVX_manufacturing.jpg",
         "assets/images/driversystems.png",
