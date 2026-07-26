@@ -51,8 +51,8 @@ const PORTFOLIO = {
       date: "2026",
       title: "Maglev Train",
       description:
-        "Custom designed and manufactured Maglev train with screen + joystick for user control (calibration, sensing, and movement modes). Built with electromagnets for propulsion and ToF sensors for  precise control.",
-      tools: ["UX Design", "Sensor Integration", "Magnetism", "Wiring"],
+        "Custom designed and manufactured Maglev train with screen + joystick for user control (calibration, sensing, and operating modes). Built with electromagnets for propulsion and ToF sensors for  precise control.",
+      tools: ["UX Design", "Sensor Integration", "Magnetism", "Wiring", "3D Print Tolerancing"],
     },
     {
       images: [
