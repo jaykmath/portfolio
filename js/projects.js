@@ -38,7 +38,21 @@ const PORTFOLIO = {
       title: "REV 11 Mechanical",
       description:
         "Led 60+ engineers in the design and manufacturing of REV 11. Best team placement in 7 years, including 6th overall in Design at competition. Design completed 1 week ahead of schedule; first drive 2/12/26 — earliest in team history.",
-      tools: ["Technical Program Management", "Electromechanical Integration", "Hardware + Sensor Integration", "Battery Design"],
+      tools: ["Technical Program Management", "Electromechanical Design", "Hardware + Sensor Integration", "Battery Design"],
+    },
+    {
+      images: [
+        "assets/images/maglev-cover.jpeg",
+        "assets/images/maglev-full.jpeg",
+        "assets/images/maglev-screen.jpg",
+        "assets/images/maglev-levitating.jpg",
+      ],
+      tag: "Maglev Train",
+      date: "2026",
+      title: "Maglev Train",
+      description:
+        "Custom designed and manufactured Maglev train with screen + joystick for user control (calibration, sensing, and movement modes). Built with electromagnets for propulsion and ToF sensors for  precise control.",
+      tools: ["UX Design", "Sensor Integration", "Magnetism", "Wiring"],
     },
     {
       images: [
@@ -82,7 +96,7 @@ const PORTFOLIO = {
         "assets/images/adapt.png",
       ],
       tag: "Assistive Tech",
-      date: "2023",
+      date: "2024",
       title: "Penn ADAPT Switch Interface",
       description:
         "Designed switch interface circuits for local high school students with cerebral palsy. 3D-printed waterproof, impact-absorbent enclosures tested iteratively with students.",
