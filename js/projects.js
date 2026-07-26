@@ -43,7 +43,6 @@ const PORTFOLIO = {
     {
       images: [
         "assets/images/REVX_driversystems.png",
-        "assets/images/rev11-design.jpg",
         "assets/images/pedal_box.jpg",
         "assets/images/REVX_manufacturing.jpg",
         "assets/images/driversystems.png",
