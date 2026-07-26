@@ -37,7 +37,7 @@ const PORTFOLIO = {
       date: "2025–2026",
       title: "REV 11 Mechanical",
       description:
-        "Led 60+ engineers in the design and manufacturing of REV 11. Best team placement in 7 years, including 6th overall in Design at competition. Design completed 1 week ahead of schedule; first drive 2/12/26 — earliest in team history.",
+        "Led 60+ engineers in the design and manufacturing of REV 11. Best team placement in 7 years, including 6th overall in Design at competition. Design completed 1 week ahead of schedule; first drive 2/12/26 — earliest in team history, 170+ miles driven.",
       tools: ["Technical Program Management", "Electromechanical Design", "Hardware + Sensor Integration", "Battery Design"],
     },
     {
@@ -67,11 +67,11 @@ const PORTFOLIO = {
         "assets/images/driversystems (4).png",
         "assets/images/REVX.jpg",
       ],
-      tag: "Driver Systems",
+      tag: "Penn Electric Racing",
       date: "2024–2025",
       title: "REV 10 Driver Systems",
       description:
-        "Led steering, acceleration, braking, and ergonomics. Top 10 in Design at 2025 competition. Decreased chassis mass by 4 lbs through validated ergonomic configuration.",
+        "Principle engineer for steering, acceleration, braking, and ergonomics. Top 10 in Design at 2025 competition. Decreased chassis mass by 4 lbs through validated ergonomic configuration.",
       tools: ["Structural Simulation", "Thermal Simulation", "Enclosure Design", "System Packaging", "Vehicle Dynamics"],
     },
     {
@@ -124,7 +124,7 @@ const PORTFOLIO = {
         "assets/images/membrane_testing2.jpg",
         "assets/images/membranetesting.jpg",
       ],
-      tag: "ModLab Research",
+      tag: "Robotics Research",
       date: "2024–2025",
       title: "Membrane Testing",
       description:
@@ -137,7 +137,7 @@ const PORTFOLIO = {
         "assets/images/steeringwheel.png",
         "assets/images/steeringwheel (2).png",
       ],
-      tag: "CAD / FEA",
+      tag: "Penn Electric Racing",
       date: "2024–2025",
       title: "Steering Wheel",
       description:
