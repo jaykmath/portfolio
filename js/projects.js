@@ -110,8 +110,8 @@ const PORTFOLIO = {
         "assets/images/composites (4).jpg",
         "assets/images/composites (5).jpg",
       ],
-      tag: "Composites",
-      date: "2024–2025",
+      tag: "Penn Electric Racing",
+      date: "2024–2026",
       title: "Composites Work",
       description:
         "In-house and facility layups for bodywork, nosecone, side wings, rear wing, and front wing. Vacuum-bag infusion with carbon fiber, copper mesh, and peel ply.",
