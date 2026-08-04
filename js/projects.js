@@ -14,6 +14,10 @@
  *   right project's `images` array (e.g. "assets/images/my-photo.jpg").
  *
  * HERO PHOTO: Change `hero.image` at the top of this file.
+ *
+ * DETAILS (shown in the expanded card view, opened on hover/click):
+ *   `details` is a list of longer bullet points. If you leave it out (or
+ *   empty), the modal just falls back to showing `description`.
  */
 const PORTFOLIO = {
   hero: {
@@ -38,6 +42,13 @@ const PORTFOLIO = {
       title: "REV 11 Mechanical",
       description:
         "Led 60+ engineers in the design and manufacturing of REV 11. Best team placement in 7 years, including 6th overall in Design at competition. Design completed 1 week ahead of schedule; first drive 2/12/26 — earliest in team history, 170+ miles driven.",
+      details: [
+        "Technical Program Manager for 60+ engineers across 6 subsystems: drivetrain, battery, chassis, aerodynamics, suspension, and vehicle dynamics.",
+        "Set the powertrain architecture to prioritize modularity and serviceability, improving long-term vehicle reliability.",
+        "Designed critical components across the vehicle, including the cell module enclosure, steering system, drivetrain mounting, and chassis tabs.",
+        "Managed electromechanical integration for the powertrain modules, tractive system, wiring harnesses, and 30+ sensors.",
+        "Coordinated GD&T, integration, and DFM/DFA reviews in CAD, cutting fabrication time on complex assemblies by 40%.",
+      ],
       tools: ["Technical Program Management", "Electromechanical Design", "Hardware + Sensor Integration", "Battery Design"],
     },
     {
@@ -52,6 +63,12 @@ const PORTFOLIO = {
       title: "Maglev Train",
       description:
         "Custom designed and manufactured Maglev train with screen + joystick for user control (calibration, sensing, and operating modes). Built with electromagnets for propulsion and ToF sensors for  precise control.",
+      details: [
+        "Designed and manufactured a custom maglev train from scratch, including the electromagnet-based propulsion system.",
+        "Built a screen and joystick interface for live control, covering calibration, sensing, and multiple operating modes.",
+        "Used time-of-flight (ToF) sensors for precise levitation height sensing and closed-loop control.",
+        "Iterated on 3D-printed part tolerances to keep the train riding smoothly along the track.",
+      ],
       tools: ["UX Design", "Sensor Integration", "Magnetism", "Wiring", "3D Print Tolerancing"],
     },
     {
@@ -72,6 +89,13 @@ const PORTFOLIO = {
       title: "REV 10 Driver Systems",
       description:
         "Principle engineer for steering, acceleration, braking, and ergonomics. Top 10 in Design at 2025 competition. Decreased chassis mass by 4 lbs through validated ergonomic configuration.",
+      details: [
+        "Principal engineer for steering, acceleration, braking, and ergonomics on REV 10.",
+        "Owned cross-subsystem integration, balancing performance tradeoffs across driver systems and the rest of the car.",
+        "Ran structural and thermal FEA simulations to validate designs before committing to manufacturing.",
+        "Manufactured 40+ parts via CNC and plastic fabrication, then validated them through on-track testing.",
+        "Placed top 10 in the Design Event at the 2025 competition with a first-principles-based design.",
+      ],
       tools: ["Structural Simulation", "Thermal Simulation", "Enclosure Design", "System Packaging", "Vehicle Dynamics"],
     },
     {
@@ -87,6 +111,11 @@ const PORTFOLIO = {
       title: "Stirling Engine",
       description:
         "Designed 20+ custom components with GD&T drawings in SolidWorks. Fabricated via CNC milling, lathing, and manual machining — peak speed of 1400 RPM.",
+      details: [
+        "Designed 20+ custom components from scratch, producing GD&T-toleranced drawings in SolidWorks for each part.",
+        "Fabricated every part in-house via CNC milling, lathing, and manual machining.",
+        "Iterated on tolerances and fits until the finished engine ran smoothly at a peak of 1,400 RPM.",
+      ],
       tools: ["MasterCAM", "GD&T", "CNC Mill / Lathe", "DFM", "DFA"],
     },
     {
@@ -100,6 +129,11 @@ const PORTFOLIO = {
       title: "Penn ADAPT Switch Interface",
       description:
         "Designed switch interface circuits for local high school students with cerebral palsy. 3D-printed waterproof, impact-absorbent enclosures tested iteratively with students.",
+      details: [
+        "Served as circuit architect for the switch interface, designing, routing, and soldering the PCBs by hand.",
+        "Built 3D-printed enclosures optimized for ingress protection, impact resistance, non-flammability, and insulation.",
+        "Tested iteratively with local high school students with cerebral palsy to refine fit, durability, and usability.",
+      ],
       tools: ["Circuit Design", "Rapid Prototyping", "IP Enclosure"],
     },
     {
@@ -115,6 +149,11 @@ const PORTFOLIO = {
       title: "Composites Work",
       description:
         "In-house and facility layups for bodywork, nosecone, side wings, rear wing, and front wing. Vacuum-bag infusion with carbon fiber, copper mesh, and peel ply.",
+      details: [
+        "Ran both in-house and facility layups for bodywork, the nosecone, side wings, rear wing, and front wing.",
+        "Used vacuum-bag infusion with carbon fiber, copper mesh, and peel ply to produce lightweight, high-strength panels.",
+        "Refined the layup process over multiple seasons to improve surface finish and reduce voids.",
+      ],
       tools: ["Carbon Fiber Manufacturing", "Infusion Layups", "Vacuum Bagging"],
     },
     {
@@ -129,6 +168,11 @@ const PORTFOLIO = {
       title: "Membrane Testing",
       description:
         "Built Arduino pneumatic test rig with ML-guided experiment selection. Reduced experiment runtime from 1.5 hours to 30 minutes — 3× more experiments per session.",
+      details: [
+        "Built an Arduino-based pneumatic test rig to characterize soft-tissue membranes with stabilizing regions.",
+        "Wrote ML-guided experiment selection in Python to prioritize the most informative geometry to test next.",
+        "Cut experiment runtime from 1.5 hours to 30 minutes, enabling roughly 3x more experiments per session.",
+      ],
       tools: ["Arduino", "Actuators"],
     },
     {
@@ -142,6 +186,11 @@ const PORTFOLIO = {
       title: "Steering Wheel",
       description:
         "Carbon fiber-foam sandwich plate selected via Ashby chart. 3D-printed ergonomic grips fit to drivers; quick-release integration with full-car FEA validation.",
+      details: [
+        "Selected a carbon fiber-foam sandwich plate using an Ashby chart to balance stiffness, weight, and cost.",
+        "Designed 3D-printed ergonomic grips fit to individual drivers' hands.",
+        "Integrated a quick-release mechanism and validated the full assembly with full-car FEA.",
+      ],
       tools: ["SolidWorks", "FEA", "Carbon Fiber Manufacturing"],
     },
   ],

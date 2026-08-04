@@ -72,6 +72,127 @@
     });
   }
 
+  /* ------------------------------------------------------------------ */
+  /* Project detail modal                                               */
+  /* ------------------------------------------------------------------ */
+
+  const modal = document.getElementById("project-modal");
+  const modalGallery = document.getElementById("modal-gallery");
+  const modalTag = document.getElementById("modal-tag");
+  const modalDate = document.getElementById("modal-date");
+  const modalTitle = document.getElementById("modal-title");
+  const modalDetails = document.getElementById("modal-details");
+  const modalTools = document.getElementById("modal-tools");
+
+  // Opens on hover on devices with a real mouse/trackpad; falls back to
+  // click/tap everywhere (including desktop, and always on touch devices,
+  // since touchscreens have no concept of "hover").
+  const supportsHover = window.matchMedia("(hover: hover) and (pointer: fine)").matches;
+
+  let lastFocusedEl = null;
+  let hoverTimer = null;
+  const HOVER_OPEN_DELAY = 350; // ms — avoids opening on a quick mouse pass-over
+
+  function openModal(project) {
+    if (!modal || !project) {
+      return;
+    }
+
+    const images = project.images && project.images.length ? project.images : [];
+    modalGallery.innerHTML = "";
+    modalGallery.classList.toggle("has-single", images.length === 1);
+    images.forEach((src) => {
+      const img = document.createElement("img");
+      img.src = src;
+      img.alt = project.title;
+      img.loading = "lazy";
+      modalGallery.appendChild(img);
+    });
+
+    modalTag.textContent = project.tag;
+    modalDate.textContent = project.date;
+    modalTitle.textContent = project.title;
+
+    const detailItems = project.details && project.details.length ? project.details : [project.description];
+    modalDetails.innerHTML = detailItems.map((line) => "<li>" + escapeHtml(line) + "</li>").join("");
+
+    modalTools.innerHTML = project.tools.map((tool) => "<li>" + escapeHtml(tool) + "</li>").join("");
+
+    lastFocusedEl = document.activeElement;
+    modal.classList.add("is-open");
+    modal.setAttribute("aria-hidden", "false");
+    document.body.classList.add("modal-open");
+
+    const closeBtn = modal.querySelector(".project-modal-close");
+    if (closeBtn) {
+      closeBtn.focus();
+    }
+
+    const scrollArea = modal.querySelector(".project-modal-scroll");
+    if (scrollArea) {
+      scrollArea.scrollTop = 0;
+    }
+  }
+
+  function closeModal() {
+    if (!modal || !modal.classList.contains("is-open")) {
+      return;
+    }
+    modal.classList.remove("is-open");
+    modal.setAttribute("aria-hidden", "true");
+    document.body.classList.remove("modal-open");
+    if (lastFocusedEl && typeof lastFocusedEl.focus === "function") {
+      lastFocusedEl.focus();
+    }
+  }
+
+  if (modal) {
+    modal.querySelectorAll("[data-modal-close]").forEach((el) => {
+      el.addEventListener("click", closeModal);
+    });
+
+    document.addEventListener("keydown", (event) => {
+      if (event.key === "Escape") {
+        closeModal();
+      }
+    });
+  }
+
+  function attachCardInteractions(card, project) {
+    card.setAttribute("tabindex", "0");
+    card.setAttribute("role", "button");
+    card.setAttribute("aria-label", "View details for " + project.title);
+
+    card.addEventListener("click", (event) => {
+      if (event.target.closest(".gallery-btn")) {
+        return;
+      }
+      openModal(project);
+    });
+
+    card.addEventListener("keydown", (event) => {
+      if (event.key === "Enter" || event.key === " ") {
+        event.preventDefault();
+        openModal(project);
+      }
+    });
+
+    if (supportsHover) {
+      card.addEventListener("mouseenter", () => {
+        window.clearTimeout(hoverTimer);
+        hoverTimer = window.setTimeout(() => openModal(project), HOVER_OPEN_DELAY);
+      });
+
+      card.addEventListener("mouseleave", () => {
+        window.clearTimeout(hoverTimer);
+      });
+    }
+  }
+
+  /* ------------------------------------------------------------------ */
+  /* Project grid rendering                                             */
+  /* ------------------------------------------------------------------ */
+
   function renderProjects() {
     const grid = document.getElementById("project-grid");
     if (!grid || typeof PORTFOLIO === "undefined") {
@@ -120,6 +241,8 @@
       if (hasGallery) {
         initGallery(card, images, project.title);
       }
+
+      attachCardInteractions(card, project);
     });
   }
 
