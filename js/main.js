@@ -84,14 +84,64 @@
   const modalDetails = document.getElementById("modal-details");
   const modalTools = document.getElementById("modal-tools");
 
-  // Opens on hover on devices with a real mouse/trackpad; falls back to
-  // click/tap everywhere (including desktop, and always on touch devices,
-  // since touchscreens have no concept of "hover").
-  const supportsHover = window.matchMedia("(hover: hover) and (pointer: fine)").matches;
-
   let lastFocusedEl = null;
-  let hoverTimer = null;
-  const HOVER_OPEN_DELAY = 350; // ms — avoids opening on a quick mouse pass-over
+
+  function renderModalGallery(images, title) {
+    modalGallery.innerHTML = "";
+
+    if (!images.length) {
+      return;
+    }
+
+    let index = 0;
+
+    const imgEl = document.createElement("img");
+    imgEl.src = images[0];
+    imgEl.alt = title;
+    imgEl.loading = "lazy";
+    modalGallery.appendChild(imgEl);
+
+    if (images.length === 1) {
+      return;
+    }
+
+    const prevBtn = document.createElement("button");
+    prevBtn.type = "button";
+    prevBtn.className = "gallery-btn gallery-prev";
+    prevBtn.setAttribute("aria-label", "Previous image");
+    prevBtn.innerHTML = "&#8249;";
+
+    const nextBtn = document.createElement("button");
+    nextBtn.type = "button";
+    nextBtn.className = "gallery-btn gallery-next";
+    nextBtn.setAttribute("aria-label", "Next image");
+    nextBtn.innerHTML = "&#8250;";
+
+    const counter = document.createElement("span");
+    counter.className = "gallery-counter";
+    counter.textContent = "1 / " + images.length;
+
+    function showImage(nextIndex) {
+      index = (nextIndex + images.length) % images.length;
+      imgEl.src = images[index];
+      imgEl.alt = title + " — photo " + (index + 1);
+      counter.textContent = (index + 1) + " / " + images.length;
+    }
+
+    prevBtn.addEventListener("click", (event) => {
+      event.preventDefault();
+      showImage(index - 1);
+    });
+
+    nextBtn.addEventListener("click", (event) => {
+      event.preventDefault();
+      showImage(index + 1);
+    });
+
+    modalGallery.appendChild(prevBtn);
+    modalGallery.appendChild(nextBtn);
+    modalGallery.appendChild(counter);
+  }
 
   function openModal(project) {
     if (!modal || !project) {
@@ -99,15 +149,7 @@
     }
 
     const images = project.images && project.images.length ? project.images : [];
-    modalGallery.innerHTML = "";
-    modalGallery.classList.toggle("has-single", images.length === 1);
-    images.forEach((src) => {
-      const img = document.createElement("img");
-      img.src = src;
-      img.alt = project.title;
-      img.loading = "lazy";
-      modalGallery.appendChild(img);
-    });
+    renderModalGallery(images, project.title);
 
     modalTag.textContent = project.tag;
     modalDate.textContent = project.date;
@@ -176,17 +218,6 @@
         openModal(project);
       }
     });
-
-    if (supportsHover) {
-      card.addEventListener("mouseenter", () => {
-        window.clearTimeout(hoverTimer);
-        hoverTimer = window.setTimeout(() => openModal(project), HOVER_OPEN_DELAY);
-      });
-
-      card.addEventListener("mouseleave", () => {
-        window.clearTimeout(hoverTimer);
-      });
-    }
   }
 
   /* ------------------------------------------------------------------ */

@@ -64,10 +64,10 @@ const PORTFOLIO = {
       description:
         "Custom designed and manufactured Maglev train with screen + joystick for user control (calibration, sensing, and operating modes). Built with electromagnets for propulsion and ToF sensors for  precise control.",
       details: [
-        "Designed and manufactured a custom maglev train from scratch, including the electromagnet-based propulsion system.",
+        "Designed the train in two halves: a lower section with magnets that ride steady against the track, and an upper section with magnets that interact with 24 ceiling-mounted electromagnets.",
         "Built a screen and joystick interface for live control, covering calibration, sensing, and multiple operating modes.",
-        "Used time-of-flight (ToF) sensors for precise levitation height sensing and closed-loop control.",
-        "Iterated on 3D-printed part tolerances to keep the train riding smoothly along the track.",
+        "Placed time-of-flight (ToF) sensors along the track so the Arduino-based controller could continuously read the train's position.",
+        "Programmed the control system to flip electromagnet polarity based on ToF readings, letting a joystick command the train left or right.",
       ],
       tools: ["UX Design", "Sensor Integration", "Magnetism", "Wiring", "3D Print Tolerancing"],
     },
@@ -90,10 +90,11 @@ const PORTFOLIO = {
       description:
         "Principle engineer for steering, acceleration, braking, and ergonomics. Top 10 in Design at 2025 competition. Decreased chassis mass by 4 lbs through validated ergonomic configuration.",
       details: [
-        "Principal engineer for steering, acceleration, braking, and ergonomics on REV 10.",
-        "Owned cross-subsystem integration, balancing performance tradeoffs across driver systems and the rest of the car.",
-        "Ran structural and thermal FEA simulations to validate designs before committing to manufacturing.",
-        "Manufactured 40+ parts via CNC and plastic fabrication, then validated them through on-track testing.",
+        "Project manager for Driver Systems, covering the cockpit, pedal box, brakes, and steering.",
+        "Designed the cockpit from an in-house mock-up and RAMSIS ergonomics software, introduced to the team for the first time, and quantified the driver CG-vs-mass tradeoff to set the final configuration.",
+        "Ran structural and thermal FEA on the brake rotors in SolidWorks with dynamic thermal parameters, iterating toward the lightest rotors that wouldn't overheat under maximum conditions.",
+        "Designed the full pedal box assembly and validated it with structural analysis to confirm it wouldn't fail under maximum loading.",
+        "Machined the entire pedal box assembly in-house (~40 hours on the mill and lathe) and assembled the brake lines, rotors, carbon-fiber seat layup, and pedal box.",
         "Placed top 10 in the Design Event at the 2025 competition with a first-principles-based design.",
       ],
       tools: ["Structural Simulation", "Thermal Simulation", "Enclosure Design", "System Packaging", "Vehicle Dynamics"],
@@ -112,9 +113,10 @@ const PORTFOLIO = {
       description:
         "Designed 20+ custom components with GD&T drawings in SolidWorks. Fabricated via CNC milling, lathing, and manual machining — peak speed of 1400 RPM.",
       details: [
-        "Designed 20+ custom components from scratch, producing GD&T-toleranced drawings in SolidWorks for each part.",
-        "Fabricated every part in-house via CNC milling, lathing, and manual machining.",
-        "Iterated on tolerances and fits until the finished engine ran smoothly at a peak of 1,400 RPM.",
+        "Designed the engine in SolidWorks, starting from preliminary part drawings and developing custom components such as the connecting rods and flywheel.",
+        "Machined the majority of the parts in-house — including the mounting block, hub, heat sink, connecting rods, and output shaft — in aluminum, steel, and brass.",
+        "Built hands-on lathe, mill, CNC operation, and GD&T skills through the manufacturing process.",
+        "The finished engine ran at a peak speed of 1,400 RPM.",
       ],
       tools: ["MasterCAM", "GD&T", "CNC Mill / Lathe", "DFM", "DFA"],
     },
@@ -169,9 +171,10 @@ const PORTFOLIO = {
       description:
         "Built Arduino pneumatic test rig with ML-guided experiment selection. Reduced experiment runtime from 1.5 hours to 30 minutes — 3× more experiments per session.",
       details: [
-        "Built an Arduino-based pneumatic test rig to characterize soft-tissue membranes with stabilizing regions.",
-        "Wrote ML-guided experiment selection in Python to prioritize the most informative geometry to test next.",
-        "Cut experiment runtime from 1.5 hours to 30 minutes, enabling roughly 3x more experiments per session.",
+        "Conducted soft robotics research in Penn's GRASP Lab (ModLab), developing silicone soft-actuated membranes with stabilizing regions.",
+        "Fabricated and tested the membranes on a custom Arduino-based pneumatic test rig to quantify how stabilizing different regions changes force output at a given internal pressure.",
+        "Working toward using an array of these membranes to vary force output at a given pressure — for example, placed under healthcare patients to relieve pressure on the body while lying down.",
+        "Wrote ML-guided experiment selection in Python to prioritize the most informative geometry to test next, cutting runtime from 1.5 hours to 30 minutes for roughly 3x more experiments per session.",
       ],
       tools: ["Arduino", "Actuators"],
     },
@@ -187,9 +190,10 @@ const PORTFOLIO = {
       description:
         "Carbon fiber-foam sandwich plate selected via Ashby chart. 3D-printed ergonomic grips fit to drivers; quick-release integration with full-car FEA validation.",
       details: [
-        "Selected a carbon fiber-foam sandwich plate using an Ashby chart to balance stiffness, weight, and cost.",
-        "Designed 3D-printed ergonomic grips fit to individual drivers' hands.",
-        "Integrated a quick-release mechanism and validated the full assembly with full-car FEA.",
+        "Owned the steering wheel design as a rookie project for the team's 2024 season vehicle.",
+        "Used FEA to evaluate material options and selected a carbon fiber-foam sandwich for the center plate, balancing strength against driver loads with low weight.",
+        "Iteratively 3D-printed ergonomic grips fit to the drivers' hands.",
+        "Designed a front-and-back bearing plate to mount the quick-release, and validated the full assembly with full-car FEA.",
       ],
       tools: ["SolidWorks", "FEA", "Carbon Fiber Manufacturing"],
     },
